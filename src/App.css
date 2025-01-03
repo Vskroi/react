@@ -1,0 +1,190 @@
+*{
+ margin: 0;
+ padding: 0;
+}
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+.app{
+  display: flex;
+  width: 1440px;
+  height: 100vh;
+  padding-bottom: 594px;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  background: #F3F4F6;
+  position: relative;
+
+}
+.content{
+  display: flex;
+  width: 377px;
+  height: 280px;
+  padding: 24px 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+border-radius: 6px;
+background: #FFF;
+box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.16);
+position: relative;
+top:60px;
+}
+.toDoList{
+
+  color: #000;
+text-align: center;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px; /* 140% */
+letter-spacing: -0.5px;
+}
+.taskInput{
+  display: flex;
+  width: 273px;
+  height: 26px;
+  padding: 8px 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 6px;
+border: 1px solid var(--border-border-border, #E4E4E7);
+border-color: #E4E4E7;
+background-color: #FFF;
+color: black;
+outline:none;
+}
+.taskInput:focus {   
+  border-color:#3C82F6;
+  box-shadow:0 0 10px #3C82F6;
+ }
+.taskButton{
+  display: flex;
+  height: 40px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+background: #3C82F6;
+outline:none;
+}
+.taskButton:hover{
+background:#317bf1;
+}
+.buttonText{
+  color: #F9F9F9;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.taskDiv{
+  display: flex;
+align-items: center;
+gap: 6px;
+align-self: stretch;
+}
+.button1{
+  display: flex;
+height: 32px;
+padding: 4px 12px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 6px;
+background: #3C82F6;
+border-radius: 6px;
+background: #3C82F6;
+color: #FFF;
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+outline:none;
+}
+.button2{
+  display: flex;
+height: 32px;
+padding: 4px 12px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 6px;
+background: #F3F4F6;
+color: #000;
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+outline:none;
+}
+.button3{
+  display: flex;
+height: 32px;
+padding: 4px 12px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 6px;
+background: #F3F4F6;
+color: #000;
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+outline:none;
+}
+.noTask{
+  align-self: stretch;
+  color: #6B7280;
+text-align: center;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 20px;
+}
+.flex{
+  display: flex;
+  gap: 6px;
+  
+}
+.pinecone{
+  display: flex;
+justify-content: center;
+align-items: center;
+gap: 4px;
+align-self: stretch;
+}
+.powered{
+  color: #6B7280;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.pineLink{
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246/var(--tw-text-opacity,1));
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  text-decoration: underline;
+}
+.pineLink:hover{
+  text-decoration: underline;
+
+}
