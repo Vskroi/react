@@ -18,7 +18,7 @@ function App() {
   const onChange = (e) => {
     setNewTask(e.target.value);
     if (e.target.value.length > 0) {
-      setError(false); // clear error when user starts typing
+      setError(false); 
     }
   };
 
