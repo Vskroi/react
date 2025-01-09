@@ -1,6 +1,8 @@
 /* import { useState } from "react"; */
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import moment from "moment";
+import Button from "./components/Button";
 import "./App.css";
 
 function App() {
@@ -34,7 +36,7 @@ function App() {
         { description: newTask, status: "ACTIVE", id: uuidv4() },
       ]);
       setLog([
-        ...log, { description: newTask, status: "LOG", id: uuidv4(),},
+        ...log, { description: newTask, status: "ACTIVE", id: uuidv4(), time: AddTime},
       ])
       setNewTask("");
     }
@@ -52,13 +54,12 @@ function App() {
           ? { ...task, status: task.status === "ACTIVE" ? "COMPLETED" : "ACTIVE" }
           : task
       );
-
-
       const completedCount = updatedList.filter((task) => task.status === "COMPLETED").length;
       setCompleted(completedCount);
-
       return updatedList;
     });
+
+  
   };
 
   const handleClearCompleted = () => {
@@ -80,8 +81,9 @@ function App() {
     return filterState === task.status;
 
   });
+const AddTime = moment().format('LLLL');
 
-
+console.log(AddTime)
 
 
   return (
@@ -104,16 +106,13 @@ function App() {
           </div>
 
           <div className="taskDiv">
-            <div
-              className="button1"
+          
+            <Button text="All"  className="button1"
               onClick={() => handleFilterStateChange("ALL")}
               style={{
                 background: filterState === "ALL" ? "#3C82F6" : "#F3F4F6",
                 color: filterState === "ALL" ? "#FFF" : "#000",
-              }}
-            >
-              All
-            </div>
+              }} />
             <div
               className="button2"
               onClick={() => handleFilterStateChange("ACTIVE")}
@@ -163,9 +162,11 @@ function App() {
                     }}
                   >
                     {task.description}
+                 
                   </p>
                 </div>
                 <div className="deleteButton" onClick={() => handleDeleteTask(task.id)}>Delete</div>
+                
               </div>
             ))
           ) : (
@@ -174,8 +175,15 @@ function App() {
          { filterState === "LOG" && log.length > 0 && (
             <div>
               {log.map((entry) => (
-                <div className="taskList" key={entry.id}><p className="task">{entry.description}</p>
-                <p> {entry.id}</p></div>
+                <div className="taskList task" key={entry.id}>
+
+                <p className="logDescription">{entry.description}:</p>
+               <div className="logList">
+                <p className="logText"> {entry.id}</p>
+                <p className="logText"> {entry.status}</p>
+                <p className="logText"> {entry.time}</p>
+                </div> 
+                </div>
               ))}
             </div>
           )}
